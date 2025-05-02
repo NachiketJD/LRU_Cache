@@ -31,3 +31,10 @@ func (l *LRUCache) Put(key int, value int) {
 		l.Queue.MoveToFront(item.KeyPtr)
 	}
 }
+func (l *LRUCache) Get(key int) int {
+	if item, ok := l.Items[key]; ok {
+		l.Queue.MoveToFront(item.KeyPtr)
+		return item.Data
+	}
+	return -1
+}
