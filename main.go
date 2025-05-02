@@ -13,3 +13,6 @@ type LRUCache struct {
 	Items    map[int]*Node
 	Capacity int
 }
+unc Constructor(capacity int) LRUCache {
+	return LRUCache{Queue: list.New(), Items: make(map[int]*Node), Capacity: capacity}
+}
